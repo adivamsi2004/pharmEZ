@@ -6,6 +6,7 @@ langchain
 langchain-google-genai
 langchain-community
 langchain-experimental
+langgraph
 apscheduler
 bcrypt
 requests

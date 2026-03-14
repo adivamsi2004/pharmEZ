@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash, jsonify
+import sys
 import os
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 import uuid
 from datetime import datetime
 from functools import wraps
@@ -34,7 +36,10 @@ if os.getenv("VERCEL"):
     UPLOAD_FOLDER = tempfile.gettempdir()
 else:
     UPLOAD_FOLDER = os.path.join(os.getcwd(), 'data', 'input')
-    ensure_directory(UPLOAD_FOLDER)
+    try:
+        ensure_directory(UPLOAD_FOLDER)
+    except OSError:
+        UPLOAD_FOLDER = tempfile.gettempdir()
 
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg'}
 
