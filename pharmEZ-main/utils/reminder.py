@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta
 from typing import List, Dict, Optional
-from mongomock import MongoClient
+from pymongo import MongoClient
 from utils.config import Config
 from utils.utils import setup_logger
 

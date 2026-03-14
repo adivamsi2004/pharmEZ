@@ -1,4 +1,4 @@
-from mongomock import MongoClient
+from pymongo import MongoClient
 from datetime import datetime
 import uuid
 from utils.config import Config

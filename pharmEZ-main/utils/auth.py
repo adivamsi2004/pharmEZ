@@ -1,5 +1,5 @@
 import bcrypt
-from mongomock import MongoClient
+from pymongo import MongoClient
 from datetime import datetime
 from utils.config import Config
 from utils.utils import setup_logger
