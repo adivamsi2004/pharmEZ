@@ -54,20 +54,25 @@ memory_manager = None
 mail_service = None
 scheduler_service = None
 
+startup_errors = {}
+
 try:
     auth_manager = AuthManager()
 except Exception as e:
     logger.error(f"AuthManager Init Error: {e}")
+    startup_errors['auth_manager'] = str(e)
 
 try:
     reminder_manager = ReminderManager()
 except Exception as e:
     logger.error(f"ReminderManager Init Error: {e}")
+    startup_errors['reminder_manager'] = str(e)
 
 try:
     pharmacy_locator = PharmacyLocator()
 except Exception as e:
     logger.error(f"PharmacyLocator Init Error: {e}")
+    startup_errors['pharmacy'] = str(e)
 
 try:
     otc_manager = OTCManager()
@@ -160,6 +165,9 @@ def login():
         username = request.form.get('username')
         password = request.form.get('password')
         
+        if not auth_manager:
+            return render_template('error.html', error=f"Auth Service failed to start on Vercel. Details: {startup_errors.get('auth_manager', 'Unknown error.')}"), 500
+
         valid_err = Validator.validate_login(username, password)
         if valid_err:
             flash(valid_err, "danger")
