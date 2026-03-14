@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pharmez-pwa-cache-v1';
+const CACHE_NAME = 'pharmez-pwa-cache-v2';
 const urlsToCache = [
     '/',
     '/static/css/style.css',
@@ -7,6 +7,7 @@ const urlsToCache = [
 ];
 
 self.addEventListener('install', event => {
+    self.skipWaiting(); // Force the waiting service worker to become the active service worker.
     event.waitUntil(
         caches.open(CACHE_NAME)
             .then(cache => {
@@ -23,9 +24,7 @@ self.addEventListener('fetch', event => {
                 if (response) {
                     return response;
                 }
-                return fetch(event.request).catch(() => {
-                    // Provide a raw offline fallback for standard API responses if we want to
-                });
+                return fetch(event.request);
             })
     );
 });
@@ -41,6 +40,6 @@ self.addEventListener('activate', event => {
                     }
                 })
             );
-        })
+        }).then(() => self.clients.claim()) // Claim clients immediately so the new SW intercepts fetches now!
     );
 });
