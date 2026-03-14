@@ -23,25 +23,77 @@ try:
 except ImportError:
     RAGGraph = None
 
+import tempfile
+
 # --- App Config ---
 app = Flask(__name__)
 app.secret_key = os.getenv("FLASK_SECRET_KEY", "pharmEZ_secret_key_2026")
 logger = setup_logger(__name__)
 
-UPLOAD_FOLDER = os.path.join(os.getcwd(), 'data', 'input')
+if os.getenv("VERCEL"):
+    UPLOAD_FOLDER = tempfile.gettempdir()
+else:
+    UPLOAD_FOLDER = os.path.join(os.getcwd(), 'data', 'input')
+    ensure_directory(UPLOAD_FOLDER)
+
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg'}
-ensure_directory(UPLOAD_FOLDER)
 
 # --- Initialize Core Services ---
-auth_manager = AuthManager()
-reminder_manager = ReminderManager()
-pharmacy_locator = PharmacyLocator()
-otc_manager = OTCManager()
-extractor = PrescriptionExtractor()
-vector_store = VectorStoreManager()
-memory_manager = MemoryManager()
-mail_service = MailService()
-scheduler_service = SchedulerService() # Starts background scheduler
+auth_manager = None
+reminder_manager = None
+pharmacy_locator = None
+otc_manager = None
+extractor = None
+vector_store = None
+memory_manager = None
+mail_service = None
+scheduler_service = None
+
+try:
+    auth_manager = AuthManager()
+except Exception as e:
+    logger.error(f"AuthManager Init Error: {e}")
+
+try:
+    reminder_manager = ReminderManager()
+except Exception as e:
+    logger.error(f"ReminderManager Init Error: {e}")
+
+try:
+    pharmacy_locator = PharmacyLocator()
+except Exception as e:
+    logger.error(f"PharmacyLocator Init Error: {e}")
+
+try:
+    otc_manager = OTCManager()
+except Exception as e:
+    logger.error(f"OTCManager Init Error: {e}")
+
+try:
+    extractor = PrescriptionExtractor()
+except Exception as e:
+    logger.error(f"PrescriptionExtractor Init Error: {e}")
+
+try:
+    vector_store = VectorStoreManager()
+except Exception as e:
+    logger.error(f"VectorStoreManager Init Error: {e}")
+
+try:
+    memory_manager = MemoryManager()
+except Exception as e:
+    logger.error(f"MemoryManager Init Error: {e}")
+
+try:
+    mail_service = MailService()
+except Exception as e:
+    logger.error(f"MailService Init Error: {e}")
+
+try:
+    if not os.getenv("VERCEL"):
+        scheduler_service = SchedulerService() # Starts background scheduler
+except Exception as e:
+    logger.error(f"SchedulerService Init Error: {e}")
 
 rag_graph = None
 try:
