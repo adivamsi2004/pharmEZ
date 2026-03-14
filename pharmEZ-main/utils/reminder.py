@@ -9,6 +9,8 @@ logger = setup_logger(__name__)
 
 class ReminderManager:
     def __init__(self):
+        if not Config.MONGO_URI:
+            raise ValueError("CRITICAL ERROR: 'MONGO_URI' environment variable is missing from Vercel. Please check your Vercel Environment Variables settings.")
         self.client = MongoClient(Config.MONGO_URI, **Config.get_tls_kwargs())
         self.db = self.client['medimate']
         self.reminders = self.db['reminders']

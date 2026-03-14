@@ -8,6 +8,8 @@ logger = setup_logger(__name__)
 
 class MemoryManager:
     def __init__(self):
+        if not Config.MONGO_URI:
+            raise ValueError("CRITICAL ERROR: 'MONGO_URI' environment variable is missing from Vercel. Please check your Vercel Environment Variables settings.")
         self.client = MongoClient(Config.MONGO_URI, **Config.get_tls_kwargs())
         self.db = self.client.get_database("prescription_db")
         self.sessions = self.db.sessions

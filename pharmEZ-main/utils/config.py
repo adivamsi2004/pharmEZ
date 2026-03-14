@@ -6,9 +6,17 @@ import ssl
 load_dotenv()
 
 class Config:
-    GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
-    PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
-    MONGO_URI = os.getenv("MONGO_URI")
+    GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "").strip('"\'')
+    PINECONE_API_KEY = os.getenv("PINECONE_API_KEY", "").strip('"\'')
+    
+    # Check multiple common names for the MongoDB connection string
+    MONGO_URI = (
+        os.getenv("MONGO_URI") or 
+        os.getenv("MONGO_URL") or 
+        os.getenv("mongo_uri") or 
+        os.getenv("mongo_url") or ""
+    ).strip('"\'')
+    
     PINECONE_INDEX_NAME = "prescription-index"
     PINECONE_ENV = "us-east-1"
     GEMINI_MODEL_NAME = "gemini-2.5-flash-lite"
