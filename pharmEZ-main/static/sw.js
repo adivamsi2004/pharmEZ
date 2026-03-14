@@ -1,7 +1,7 @@
-const CACHE_NAME = 'pharmez-pwa-cache-v3-bypass';
+const CACHE_NAME = 'pharmez-pwa-cache-v4-pwa-compat';
 
 self.addEventListener('install', event => {
-    self.skipWaiting(); // Immediately force update
+    self.skipWaiting(); 
 });
 
 self.addEventListener('activate', event => {
@@ -17,8 +17,8 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
-    // By returning early and NOT calling event.respondWith, 
-    // the browser handles all requests natively via the network.
-    // This completely prevents ERR_FAILED for a Flask app on Vercel.
-    return;
+    // To ensure the PWA install prompt triggers in all browsers, 
+    // we MUST respond to fetch events with event.respondWith().
+    // We pass the request directly to the network to avoid cache errors.
+    event.respondWith(fetch(event.request));
 });
