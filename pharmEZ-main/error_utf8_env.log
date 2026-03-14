@@ -1,0 +1,443 @@
+﻿py : C:\Users\adiva\OneDrive\
+Documents\pharmEZ-main\pharmE
+Z-main\utils\extractor.py:1: 
+FutureWarning: 
+At line:1 char:1
++ py app.py 2>&1 | Out-File 
+-Encoding utf8 
+error_utf8_env.log
++ ~~~~~~~~~~~~~~
+    + CategoryInfo           
+   : NotSpecified: (C:\User  
+  s\adiva\...FutureWarning   
+ : :String) [], RemoteExc    
+eption
+    + FullyQualifiedErrorId  
+   : NativeCommandError
+ 
+
+All support for the 
+`google.generativeai` 
+package has ended. It will 
+no longer be receiving 
+updates or bug fixes. Please 
+switch to the `google.genai` 
+package as soon as possible.
+See README for more details:
+
+https://github.com/google-gem
+ini/deprecated-generative-ai-
+python/blob/main/README.md
+
+  import google.generativeai 
+as genai
+2026-03-12 21:57:59,110 - 
+utils.vector_store - INFO - 
+Creating Pinecone index: 
+prescription-index
+2026-03-12 21:58:09,592 - 
+utils.otc_manager - INFO - 
+Initializing OTC Vector DB...
+2026-03-12 21:58:16,630 - 
+utils.vector_store - INFO - 
+Stored 12 texts in namespace 
+'otc_medicines'
+2026-03-12 21:58:16,631 - 
+utils.otc_manager - INFO - 
+OTC List Ingested into 
+Pinecone.
+2026-03-12 21:58:27,375 - 
+utils.memory - INFO - 
+Connected to MongoDB
+2026-03-12 21:58:27,405 - 
+services.scheduler - INFO - 
+Scheduler started: 
+Medication reminder job 
+added.
+2026-03-12 21:58:38,115 - 
+utils.memory - INFO - 
+Connected to MongoDB
+ * Serving Flask app 'app'
+ * Debug mode: on
+WARNING: This is a 
+development server. Do not 
+use it in a production 
+deployment. Use a production 
+WSGI server instead.
+ * Running on 
+http://127.0.0.1:5000
+Press CTRL+C to quit
+127.0.0.1 - - [12/Mar/2026 
+21:59:01] "GET / HTTP/1.1" 
+302 -
+127.0.0.1 - - [12/Mar/2026 
+21:59:01] "GET /login 
+HTTP/1.1" 200 -
+127.0.0.1 - - [12/Mar/2026 
+21:59:01] "GET 
+/static/img/logo.jpeg 
+HTTP/1.1" 200 -
+127.0.0.1 - - [12/Mar/2026 
+21:59:01] "GET 
+/static/css/style.css 
+HTTP/1.1" 200 -
+127.0.0.1 - - [12/Mar/2026 
+21:59:01] "GET 
+/static/img/logo.jpeg 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:00:30] "GET / HTTP/1.1" 
+302 -
+127.0.0.1 - - [12/Mar/2026 
+22:00:30] "GET /login 
+HTTP/1.1" 200 -
+127.0.0.1 - - [12/Mar/2026 
+22:00:30] "GET 
+/static/img/logo.jpeg 
+HTTP/1.1" 200 -
+127.0.0.1 - - [12/Mar/2026 
+22:00:30] "GET 
+/static/css/style.css 
+HTTP/1.1" 200 -
+127.0.0.1 - - [12/Mar/2026 
+22:00:31] "GET 
+/static/img/logo.jpeg 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:00:52] "POST /login 
+HTTP/1.1" 200 -
+127.0.0.1 - - [12/Mar/2026 
+22:00:54] "GET 
+/static/css/style.css 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:00:54] "GET 
+/static/img/logo.jpeg 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:01:06] "POST /login 
+HTTP/1.1" 200 -
+127.0.0.1 - - [12/Mar/2026 
+22:01:06] "GET 
+/static/css/style.css 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:01:06] "GET 
+/static/img/logo.jpeg 
+HTTP/1.1" 304 -
+2026-03-12 22:01:47,689 - 
+utils.auth - INFO - 
+Registered user: 
+adivamshivamshi@gmail.com
+127.0.0.1 - - [12/Mar/2026 
+22:01:47] "POST /login 
+HTTP/1.1" 200 -
+127.0.0.1 - - [12/Mar/2026 
+22:01:47] "GET 
+/static/css/style.css 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:01:47] "GET 
+/static/img/logo.jpeg 
+HTTP/1.1" 304 -
+2026-03-12 22:01:58,443 - 
+utils.auth - INFO - User 
+logged in: 
+adivamshivamshi@gmail.com
+127.0.0.1 - - [12/Mar/2026 
+22:01:58] "POST /login 
+HTTP/1.1" 302 -
+127.0.0.1 - - [12/Mar/2026 
+22:01:58] "GET /dashboard 
+HTTP/1.1" 200 -
+127.0.0.1 - - [12/Mar/2026 
+22:01:58] "GET 
+/static/img/logo.jpeg 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:01:58] "GET 
+/static/css/style.css 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:06:05] "POST /login 
+HTTP/1.1" 200 -
+127.0.0.1 - - [12/Mar/2026 
+22:06:05] "GET 
+/static/css/style.css 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:06:05] "GET 
+/static/img/logo.jpeg 
+HTTP/1.1" 304 -
+2026-03-12 22:06:15,855 - 
+utils.auth - INFO - User 
+logged in: 
+adivamshivamshi@gmail.com
+127.0.0.1 - - [12/Mar/2026 
+22:06:15] "POST /login 
+HTTP/1.1" 302 -
+127.0.0.1 - - [12/Mar/2026 
+22:06:15] "GET /dashboard 
+HTTP/1.1" 200 -
+127.0.0.1 - - [12/Mar/2026 
+22:06:15] "GET 
+/static/css/style.css 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:06:15] "GET 
+/static/img/logo.jpeg 
+HTTP/1.1" 304 -
+2026-03-12 22:06:53,763 - 
+utils.extractor - ERROR - 
+Extraction failed: Expecting 
+value: line 1 column 1 (char 
+0)
+127.0.0.1 - - [12/Mar/2026 
+22:06:53] "POST /dashboard 
+HTTP/1.1" 200 -
+127.0.0.1 - - [12/Mar/2026 
+22:06:53] "GET 
+/static/css/style.css 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:06:53] "GET 
+/static/img/logo.jpeg 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:07:13] "GET /dashboard 
+HTTP/1.1" 200 -
+127.0.0.1 - - [12/Mar/2026 
+22:07:13] "GET 
+/static/css/style.css 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:07:13] "GET 
+/static/img/logo.jpeg 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:07:18] "GET /dashboard 
+HTTP/1.1" 200 -
+127.0.0.1 - - [12/Mar/2026 
+22:07:18] "GET 
+/static/css/style.css 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:07:18] "GET 
+/static/img/logo.jpeg 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:07:23] "GET /medications 
+HTTP/1.1" 200 -
+127.0.0.1 - - [12/Mar/2026 
+22:07:23] "GET 
+/static/js/scheduler.js 
+HTTP/1.1" 200 -
+127.0.0.1 - - [12/Mar/2026 
+22:07:23] "GET 
+/static/css/style.css 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:07:23] "GET 
+/static/img/logo.jpeg 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:07:32] "GET /dashboard 
+HTTP/1.1" 200 -
+127.0.0.1 - - [12/Mar/2026 
+22:07:32] "GET 
+/static/css/style.css 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:07:32] "GET 
+/static/img/logo.jpeg 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:09:53] "POST /dashboard 
+HTTP/1.1" 200 -
+127.0.0.1 - - [12/Mar/2026 
+22:09:53] "GET 
+/static/css/style.css 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:09:53] "GET 
+/static/img/logo.jpeg 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:09:57] "POST /dashboard 
+HTTP/1.1" 200 -
+127.0.0.1 - - [12/Mar/2026 
+22:09:57] "GET 
+/static/css/style.css 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:09:57] "GET 
+/static/img/logo.jpeg 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:11:42] "GET /medications 
+HTTP/1.1" 200 -
+127.0.0.1 - - [12/Mar/2026 
+22:11:42] "GET 
+/static/css/style.css 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:11:42] "GET 
+/static/img/logo.jpeg 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:11:42] "GET 
+/static/js/scheduler.js 
+HTTP/1.1" 304 -
+2026-03-12 22:16:33,467 - 
+utils.vector_store - INFO - 
+Stored 1 chunks for 
+prescription 6235de46-b3fa-44
+98-bd65-e73278286df8
+2026-03-12 22:16:33,596 - 
+utils.memory - INFO - 
+Created new session 8f03c495-
+31d0-412f-b8c5-ab10bfa2e2db 
+for user 
+adivamshivamshi@gmail.com on 
+prescription 6235de46-b3fa-44
+98-bd65-e73278286df8
+127.0.0.1 - - [12/Mar/2026 
+22:16:33] "POST /dashboard 
+HTTP/1.1" 302 -
+127.0.0.1 - - [12/Mar/2026 
+22:16:33] "GET /dashboard?vie
+w=6235de46-b3fa-4498-bd65-e73
+278286df8 HTTP/1.1" 200 -
+127.0.0.1 - - [12/Mar/2026 
+22:16:33] "GET 
+/static/css/style.css 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:16:33] "GET 
+/static/img/logo.jpeg 
+HTTP/1.1" 304 -
+2026-03-12 22:21:09,186 - 
+utils.graph - INFO - Node: 
+Retrieve
+2026-03-12 22:21:14,244 - 
+utils.graph - INFO - Node: 
+Generate
+127.0.0.1 - - [12/Mar/2026 
+22:21:15] "POST /api/chat 
+HTTP/1.1" 200 -
+2026-03-12 22:21:48,540 - 
+utils.graph - INFO - Node: 
+Retrieve
+2026-03-12 22:21:49,494 - 
+utils.graph - INFO - Node: 
+Generate
+127.0.0.1 - - [12/Mar/2026 
+22:21:50] "POST /api/chat 
+HTTP/1.1" 200 -
+127.0.0.1 - - [12/Mar/2026 
+22:22:42] "GET /safety 
+HTTP/1.1" 200 -
+127.0.0.1 - - [12/Mar/2026 
+22:22:42] "GET 
+/static/css/style.css 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:22:42] "GET 
+/static/img/logo.jpeg 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:22:44] "GET /pharmacy 
+HTTP/1.1" 200 -
+127.0.0.1 - - [12/Mar/2026 
+22:22:44] "GET 
+/static/css/style.css 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:22:44] "GET 
+/static/img/logo.jpeg 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:22:46] "GET /medications 
+HTTP/1.1" 200 -
+127.0.0.1 - - [12/Mar/2026 
+22:22:46] "GET 
+/static/css/style.css 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:22:46] "GET 
+/static/img/logo.jpeg 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:22:46] "GET 
+/static/js/scheduler.js 
+HTTP/1.1" 200 -
+127.0.0.1 - - [12/Mar/2026 
+22:22:47] "GET /dashboard 
+HTTP/1.1" 200 -
+127.0.0.1 - - [12/Mar/2026 
+22:22:47] "GET 
+/static/css/style.css 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:22:47] "GET 
+/static/img/logo.jpeg 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:23:06] "GET /dashboard 
+HTTP/1.1" 200 -
+127.0.0.1 - - [12/Mar/2026 
+22:23:06] "GET 
+/static/css/style.css 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:23:06] "GET 
+/static/img/logo.jpeg 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:23:07] "GET /pharmacy 
+HTTP/1.1" 200 -
+127.0.0.1 - - [12/Mar/2026 
+22:23:07] "GET 
+/static/css/style.css 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:23:07] "GET 
+/static/img/logo.jpeg 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:23:09] "GET /medications 
+HTTP/1.1" 200 -
+127.0.0.1 - - [12/Mar/2026 
+22:23:09] "GET 
+/static/css/style.css 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:23:09] "GET 
+/static/img/logo.jpeg 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:23:09] "GET 
+/static/js/scheduler.js 
+HTTP/1.1" 304 -
+127.0.0.1 - - [12/Mar/2026 
+22:23:11] "GET /medications 
+HTTP/1.1" 200 -
+127.0.0.1 - - [12/Mar/2026 
+22:23:11] "GET 
+/static/css/style.css 
+HTTP/1.1" 200 -
+127.0.0.1 - - [12/Mar/2026 
+22:23:11] "GET 
+/static/img/logo.jpeg 
+HTTP/1.1" 200 -
+127.0.0.1 - - [12/Mar/2026 
+22:23:11] "GET 
+/static/js/scheduler.js 
+HTTP/1.1" 200 -
+127.0.0.1 - - [12/Mar/2026 
+22:23:11] "GET /favicon.ico 
+HTTP/1.1" 404 -
+127.0.0.1 - - [12/Mar/2026 
+22:23:11] "GET 
+/static/css/style.css 
+HTTP/1.1" 200 -

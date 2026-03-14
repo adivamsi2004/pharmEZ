@@ -1,0 +1,97 @@
+﻿py : C:\Users\adiva\OneDrive\
+Documents\pharmEZ-main\pharmE
+Z-main\utils\extractor.py:1: 
+FutureWarning: 
+At line:1 char:1
++ py app.py 2>&1 | Out-File 
+-Encoding utf8 error_utf8.log
++ ~~~~~~~~~~~~~~
+    + CategoryInfo           
+   : NotSpecified: (C:\User  
+  s\adiva\...FutureWarning   
+ : :String) [], RemoteExc    
+eption
+    + FullyQualifiedErrorId  
+   : NativeCommandError
+ 
+
+All support for the 
+`google.generativeai` 
+package has ended. It will 
+no longer be receiving 
+updates or bug fixes. Please 
+switch to the `google.genai` 
+package as soon as possible.
+See README for more details:
+
+https://github.com/google-gem
+ini/deprecated-generative-ai-
+python/blob/main/README.md
+
+  import google.generativeai 
+as genai
+Traceback (most recent call 
+last):
+  File "C:\Users\adiva\OneDri
+ve\Documents\pharmEZ-main\pha
+rmEZ-main\app.py", line 39, 
+in <module>
+    otc_manager = 
+OTCManager()
+  File "C:\Users\adiva\OneDri
+ve\Documents\pharmEZ-main\pha
+rmEZ-main\utils\otc_manager.p
+y", line 13, in __init__
+    self.llm = ChatGoogleGene
+rativeAI(model=Config.GEMINI_
+MODEL_NAME, google_api_key=Co
+nfig.GOOGLE_API_KEY)
+               ~~~~~~~~~~~~~~
+~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\adiva\AppDat
+a\Local\Programs\Python\Pytho
+n313\Lib\site-packages\langch
+ain_google_genai\chat_models.
+py", line 2269, in __init__
+    
+super().__init__(**kwargs)
+    
+~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\adiva\AppDat
+a\Local\Programs\Python\Pytho
+n313\Lib\site-packages\langch
+ain_core\load\serializable.py
+", line 118, in __init__
+    super().__init__(*args, 
+**kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^
+^^^^^^^^
+  File "C:\Users\adiva\AppDat
+a\Local\Programs\Python\Pytho
+n313\Lib\site-packages\pydant
+ic\main.py", line 250, in 
+__init__
+    validated_self = self.__p
+ydantic_validator__.validate_
+python(data, 
+self_instance=self)
+pydantic_core._pydantic_core.
+ValidationError: 1 
+validation error for 
+ChatGoogleGenerativeAI
+  Value error, API key 
+required for Gemini 
+Developer API. Provide 
+api_key parameter or set GOOG
+LE_API_KEY/GEMINI_API_KEY 
+environment variable. 
+[type=value_error, 
+input_value={'model': 
+'gemini-2.5-fla...one, 
+'model_kwargs': {}}, 
+input_type=dict]
+    For further information 
+visit https://errors.pydantic
+.dev/2.12/v/value_error
